@@ -2,7 +2,7 @@
  using System.Collections;
  using System.Collections.Generic;
  
- public static class Utils {
+public static class UtilsPontura {
  
      public static void RemoveAllChildsIn(Transform container)
      {

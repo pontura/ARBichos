@@ -74,13 +74,7 @@ namespace GoogleARCore.HelloAR
         /// </summary>
 
 		public bool done;
-		void Start()
-		{
-#if UNITY_EDITOR
-			Game newGame = Instantiate(game);
-			newGame.Init (FirstPersonCamera);
-#endif
-		}
+
 
         public void Update()
         {
@@ -143,18 +137,8 @@ namespace GoogleARCore.HelloAR
             if (Session.Raycast(touch.position.x, touch.position.y, raycastFilter, out hit))
             {
 				done = true;
-				Game newGame = Instantiate(game, hit.Pose.position, hit.Pose.rotation);
-				newGame.Init (FirstPersonCamera);
-                // Create an anchor to allow ARCore to track the hitpoint as understanding of the physical
-                // world evolves.
-                var anchor = hit.Trackable.CreateAnchor(hit.Pose);
-
-                // Andy should look at the camera but still be flush with the plane.
-				newGame.transform.LookAt(FirstPersonCamera.transform);
-				newGame.transform.rotation = Quaternion.Euler(0.0f, newGame.transform.rotation.eulerAngles.y, newGame.transform.rotation.z);
-
-                // Make Andy model a child of the anchor.
-				newGame.transform.parent = anchor.transform;
+				var anchor = hit.Trackable.CreateAnchor(hit.Pose);
+				Events.AddWorld (anchor.transform, hit.Pose.position, hit.Pose.rotation);
 				SetOff ();
             }
         }

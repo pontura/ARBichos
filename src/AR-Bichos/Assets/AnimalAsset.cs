@@ -9,6 +9,7 @@ public class AnimalAsset : MonoBehaviour {
 	void Start()
 	{
 		sp.color = Color.white;
+		sp.enabled = false;
 	}
 	public void Walk()
 	{
@@ -33,6 +34,14 @@ public class AnimalAsset : MonoBehaviour {
 	{
 		//sp.enabled = true;
 		if(isInTarget)
+			sp.enabled = true;
+		else
+			sp.enabled = false;
+	}
+	public void SetTargetActive(bool isActive)
+	{
+		//sp.enabled = true;
+		if(isActive)
 			sp.color = Color.green;
 		else
 			sp.color = Color.red;

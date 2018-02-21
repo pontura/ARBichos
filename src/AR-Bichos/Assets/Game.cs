@@ -32,18 +32,27 @@ public class Game : MonoBehaviour {
 		paths.Init ();
 		animalsManager.Init ();
 	}
-	void Update () {
-		if (state == states.WAITING)
-			return;
-		
-		RaycastHit[] hits;
-		hits = Physics.RaycastAll(cam.transform.position, cam.transform.forward, 100.0F);
-
-		for (int i = 0; i < hits.Length; i++)
-		{
-			RaycastHit hit = hits[i];
-			if(hit.transform.gameObject.name == "floor")
-				eyeFocus.transform.position = hit.point;
-		}
-	}
+//	void Update () {
+//
+//		return;
+//
+//
+//
+//
+//
+//
+//
+//		if (state == states.WAITING)
+//			return;
+//		
+//		RaycastHit[] hits;
+//		hits = Physics.RaycastAll(cam.transform.position, cam.transform.forward, 100.0F);
+//
+//		for (int i = 0; i < hits.Length; i++)
+//		{
+//			RaycastHit hit = hits[i];
+//			if(hit.transform.gameObject.name == "floor")
+//				eyeFocus.transform.position = hit.point;
+//		}
+//	}
 }

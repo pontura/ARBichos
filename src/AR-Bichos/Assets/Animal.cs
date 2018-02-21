@@ -84,8 +84,8 @@ public class Animal : MonoBehaviour {
 			isInTarget = true;
 			//transform.LookAt (Game.Instance.cam.transform);
 			CancelInvoke ();
-			state = states.ALERT;
-			Invoke ("Espace", 0.3f);
+			//state = states.ALERT;
+			Invoke ("Espace", 1f);
 			Game.Instance.animalsManager.SetInTarget (this, true);
 			asset.SetInTarget (true);
 		}

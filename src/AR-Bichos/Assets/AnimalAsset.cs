@@ -15,20 +15,20 @@ public class AnimalAsset : MonoBehaviour {
 	{
 		//sp.enabled = false;
 	//	anim.gameObject.SetActive (true);
-		anim.Play ("Walk");
+		//anim.Play ("Walk");
 		sp.color = Color.white;
 	}
 	public void Run()
 	{
 		//sp.enabled = true;
 		//anim.gameObject.SetActive (true);
-		anim.Play ("Run");
+		//anim.Play ("Run");
 	}
 	public void Idle()
 	{
 		//sp.enabled = false;
 		//anim.gameObject.SetActive (false);
-		anim.Play ("Idle_A");
+		//anim.Play ("Idle_A");
 	}
 	public void SetInTarget(bool isInTarget)
 	{

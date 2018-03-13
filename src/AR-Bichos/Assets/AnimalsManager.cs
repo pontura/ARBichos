@@ -9,13 +9,11 @@ public class AnimalsManager : MonoBehaviour {
 	public List<Animal> all;
 	public List<Animal> inTarget;
 	public Transform container;
+	public GameObject animalsContainer;
 
 	public void Init () {
-		for (int a = 0; a < total; a++) {
-			Animal newAnimal = Instantiate (animal);	
-			newAnimal.transform.SetParent (container);
-			newAnimal.transform.localScale = Vector3.one;
-			newAnimal.Init ();
+		foreach (Animal animal in all) {
+			animal.Init ();
 		}
 	}
 	public void SetInTarget(Animal animal, bool isInTarget)

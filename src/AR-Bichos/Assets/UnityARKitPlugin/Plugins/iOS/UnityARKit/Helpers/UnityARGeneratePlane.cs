@@ -10,7 +10,7 @@ namespace UnityEngine.XR.iOS
 
 		// Use this for initialization
 		void Start () {
-			UIPanels.Instance.configScreens.SetState (ConfigScreens.states.CONFIG_AREA);
+			//UIPanels.Instance.configScreens.SetState (ConfigScreens.states.CONFIG_AREA);
             unityARAnchorManager = new UnityARAnchorManager();
 			UnityARUtility.InitializePlanePrefab (planePrefab);
 		}

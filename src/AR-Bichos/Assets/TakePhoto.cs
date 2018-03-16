@@ -8,11 +8,11 @@ public class TakePhoto : MonoBehaviour {
 
 	public void SetOn()
 	{
-		Game.Instance.cam.targetTexture = rt;
+		Main.Instance.GetCamera().targetTexture = rt;
 		Invoke("SetOff", 0.1f);
 	}
 	void SetOff()
 	{
-		Game.Instance.cam.targetTexture = null;
+		Main.Instance.GetCamera().targetTexture = null;
 	}
 }

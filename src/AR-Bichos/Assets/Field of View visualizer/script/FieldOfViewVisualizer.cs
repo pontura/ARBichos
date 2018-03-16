@@ -52,7 +52,6 @@ public class FieldOfViewVisualizer : MonoBehaviour {
 	void Update () {
 		if (fov == null || cam == null)		return;
 		Vector3[] f = new Vector3[28];
-		print (scaleFactorSubCamera.x + " ofafs: " + offsetSubCamera.y);
 		Vector2 scaleFactor = new Vector2(cam.rect.width * scaleFactorSubCamera.x, cam.rect.height * scaleFactorSubCamera.y) ;
 		Vector2 offset = new Vector2 (cam.rect.x, cam.rect.y) - offsetSubCamera;
 		//Vector2 offset = new Vector2 (cam.rect.x, cam.rect.y * Screen.height);

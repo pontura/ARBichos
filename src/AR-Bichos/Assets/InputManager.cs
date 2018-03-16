@@ -9,9 +9,9 @@ public class InputManager : MonoBehaviour {
 
 	void Update () {
 		if (Input.GetMouseButtonDown (0)) {
-			UI.Instance.flash.SetOn ();
+			UIPanels.Instance.flash.SetOn ();
 			takePhoto.SetOn ();
-			UI.Instance.showPhoto.SetOn ();
+			UIPanels.Instance.showPhoto.SetOn ();
 		}
 		if (animalsManager.inTarget.Count > 0) {
 			foreach (Animal Animal in animalsManager.inTarget)
@@ -22,39 +22,67 @@ public class InputManager : MonoBehaviour {
 	RaycastHit hit;
 	void SetRayTo(Animal animal)
 	{
-		Vector3 from = Game.Instance.cam.transform.position;
-		Vector3 to1 = animal.front.transform.position;
-		Vector3 to2 = animal.back.transform.position;
+		Vector3 from = Main.Instance.GetCamera().transform.position;
+		Transform[] allParts = animal.targetPhotoParts;
 
-		int seenBy = 0;
-		if(Physics.Raycast(from, (to1 - from	), out hit, maxRange))
-		{
-			if (hit.transform.name == "floor") {
-				seenBy++;
-				Debug.DrawRay (from, (to1 - from), Color.green);
-			}else {
-				Debug.DrawRay(from, (to1 - from	), Color.red);
+		int seenBy = allParts.Length;
+		foreach (Transform t in allParts) {
+			
+			if(Physics.Raycast(from, (t.position - from	), out hit, maxRange))
+			{
+				if (hit.transform.tag != "photoPart") {
+					seenBy--;
+					Debug.DrawRay (from, (t.position  - from), Color.red);
+				} else {
+					Debug.DrawRay(from, (t.position  - from	), Color.green);
+				}
 			}
-
 		}
-		if(Physics.Raycast(from, (to2 - from	), out hit, maxRange))
-		{
-			if (hit.transform.name == "floor") {
-				seenBy++;
-				Debug.DrawRay (from, (to2 - from), Color.green);
-			}
-			else {
-				Debug.DrawRay(from, (to2 - from	), Color.red);
-			}
 
-		}
+		return;
+		//print("seenBy: " + seenBy + " of " + allParts.Length);
+
 		if (seenBy==2) {
 			animal.asset.SetTargetActive (true);
-		//	Debug.DrawRay (from, (animal.transform.position - from), Color.green);
+			//	Debug.DrawRay (from, (animal.transform.position - from), Color.green);
 		} else {
 			animal.asset.SetTargetActive (false);
 			//Debug.DrawRay(from, (animal.transform.position - from	), Color.red);
 		}
+
+//
+//		Vector3 to1 = animal.front.transform.position;
+//		Vector3 to2 = animal.back.transform.position;
+//
+//		int seenBy = 0;
+//		if(Physics.Raycast(from, (to1 - from	), out hit, maxRange))
+//		{
+//			if (hit.transform.name == "floor") {
+//				seenBy++;
+//				Debug.DrawRay (from, (to1 - from), Color.green);
+//			}else {
+//				Debug.DrawRay(from, (to1 - from	), Color.red);
+//			}
+//
+//		}
+//		if(Physics.Raycast(from, (to2 - from	), out hit, maxRange))
+//		{
+//			if (hit.transform.name == "floor") {
+//				seenBy++;
+//				Debug.DrawRay (from, (to2 - from), Color.green);
+//			}
+//			else {
+//				Debug.DrawRay(from, (to2 - from	), Color.red);
+//			}
+//
+//		}
+//		if (seenBy==2) {
+//			animal.asset.SetTargetActive (true);
+//		//	Debug.DrawRay (from, (animal.transform.position - from), Color.green);
+//		} else {
+//			animal.asset.SetTargetActive (false);
+//			//Debug.DrawRay(from, (animal.transform.position - from	), Color.red);
+//		}
 			
 	}
 }

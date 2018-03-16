@@ -9,8 +9,8 @@ public class Animal : MonoBehaviour {
 
 	float miniumDist = 0.01f;
 
-	public Transform front;
-	public Transform back;
+	public Transform[] targetPhotoParts;
+
 	bool isInTarget;
 	public PathsWalkable pathsWalkable;
 
@@ -56,9 +56,8 @@ public class Animal : MonoBehaviour {
 			return;
 		if (other.tag == "Eyes") {
 			isInTarget = true;
-			//transform.LookAt (Game.Instance.cam.transform);
 			CancelInvoke ();
-			Game.Instance.animalsManager.SetInTarget (this, true);
+			Main.Instance.game.animalsManager.SetInTarget (this, true);
 			asset.SetInTarget (true);
 		}
 	}
@@ -66,8 +65,7 @@ public class Animal : MonoBehaviour {
 	{
 		if (other.tag == "Eyes") {
 			isInTarget = false;
-			Invoke ("OutOfDanger", 4);
-			Game.Instance.animalsManager.SetInTarget (this, false);
+			Main.Instance.game.animalsManager.SetInTarget (this, false);
 			asset.SetInTarget (false);
 		}
 	}

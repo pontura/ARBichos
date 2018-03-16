@@ -52,10 +52,11 @@ public class UnityARUserAnchorExample : MonoBehaviour {
 		{
 			if (isDone)
 				return;
+			
 			isDone = true;
 			Game newGame = Instantiate(game, Camera.main.transform.position + (this.distanceFromCamera * Camera.main.transform.forward), Quaternion.identity);
 			UnityARUserAnchorComponent component = newGame.gameObject.AddComponent<UnityARUserAnchorComponent>();
-			newGame.Init(MainCamera);
+			newGame.Init();
 				//.GetComponent<UnityARUserAnchorComponent>();
 			m_Clones.Add(component.AnchorId);
 			m_TimeUntilRemove = 4.0f;

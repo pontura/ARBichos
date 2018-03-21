@@ -4,12 +4,23 @@ using UnityEngine;
 
 public class TakePhoto : MonoBehaviour {
 
-	public RenderTexture rt;
+	//public RenderTexture[] all;
+	int id;
+	public UIPanels uiPanels;
 
 	public void SetOn()
 	{
-		Main.Instance.GetCamera().targetTexture = rt;
+		SavePhoto ();
 		Invoke("SetOff", 0.1f);
+		uiPanels.uiTimer.NewPhotoTaken ();
+	}
+	void SavePhoto()
+	{
+		RenderTexture rt = new RenderTexture (1024, 768, 16, RenderTextureFormat.ARGB32);
+		rt.Create ();
+		Main.Instance.GetCamera().targetTexture = rt;
+		Data.Instance.photosManager.AddPhoto (rt);
+		id++;
 	}
 	void SetOff()
 	{

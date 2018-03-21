@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShowPhoto : MonoBehaviour {
 
 	public GameObject panel;
+	public RawImage rawImage;
 	bool isOn;
 
 	void Start () {
@@ -13,6 +15,7 @@ public class ShowPhoto : MonoBehaviour {
 	
 	public void SetOn()
 	{
+		rawImage.texture = Data.Instance.photosManager.GetLast();
 		Invoke ("Wait", 0.5f);
 	}
 	void Wait()

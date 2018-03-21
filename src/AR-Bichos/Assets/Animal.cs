@@ -12,7 +12,6 @@ public class Animal : MonoBehaviour {
 	public Transform[] targetPhotoParts;
 
 	bool isInTarget;
-	public PathsWalkable pathsWalkable;
 
 	public enum states
 	{
@@ -23,20 +22,12 @@ public class Animal : MonoBehaviour {
 	public void Init()
 	{		
 		Idle ();
-		//pathsWalkable.Init (this.transform.position);
 	}
 
 	void Update()
 	{
 		if (state == states.IDLE)
 			return;
-//		if (Vector3.Distance (transform.position, pathsWalkable.goTo.transform.position) < miniumDist) {
-//			Idle ();
-//		} else {
-//			transform.LookAt (pathsWalkable.goTo.transform);
-//			float realSpeed = speed;
-//			transform.Translate (transform.forward * (Time.deltaTime * (realSpeed / 10)), Space.World);
-//		}
 	}
 	void Idle ()
 	{
@@ -46,7 +37,6 @@ public class Animal : MonoBehaviour {
 	}
 	void Move()
 	{
-		pathsWalkable.SetNewPath ();
 		state = states.MOVEING;
 		asset.Walk ();
 	}

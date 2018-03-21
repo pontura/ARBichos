@@ -1,0 +1,22 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class Intro : MonoBehaviour {
+
+	public void PlayByPhotos()
+	{
+		Data.Instance.playMode = Data.playModes.PHOTOS;
+		Done();
+	}
+	public void PlayByTime()
+	{
+		Data.Instance.playMode = Data.playModes.TIME;
+		Done();
+	}
+	public void Done()
+	{
+		SceneManager.LoadScene ("World");
+	}
+}

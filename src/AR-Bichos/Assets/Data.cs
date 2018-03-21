@@ -9,6 +9,15 @@ public class Data : MonoBehaviour
     const string PREFAB_PATH = "Data";    
     static Data mInstance = null;
 
+	public playModes playMode;
+	public PhotosManager photosManager;
+
+	public enum playModes
+	{
+		TIME,
+		PHOTOS
+	}
+
     public static Data Instance
     {
         get
@@ -26,7 +35,8 @@ public class Data : MonoBehaviour
             return mInstance;
         }
     }
-    public string currentLevel;
+
+    string currentLevel;
     public void LoadLevel(string aLevelName)
     {
         this.currentLevel = aLevelName;

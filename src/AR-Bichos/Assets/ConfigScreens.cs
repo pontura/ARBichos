@@ -37,6 +37,7 @@ public class ConfigScreens : MonoBehaviour {
 			field.text = "Tap where you want to place the game";
 			break;
 		case states.DONE:
+			GetComponent<ResetButton> ().Init ();
 			panel.SetActive (false);
 			isDone = true;
 			break;

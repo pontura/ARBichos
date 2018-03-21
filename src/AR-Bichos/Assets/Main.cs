@@ -49,7 +49,6 @@ public class Main : MonoBehaviour {
 
 	
 		game = Instantiate(game_to_instantiate, pos,rot);
-		game.Init ();
 
 		game.transform.LookAt(cam.transform);
 		game.transform.rotation = Quaternion.Euler(0.0f, game.transform.rotation.eulerAngles.y, game.transform.rotation.z);

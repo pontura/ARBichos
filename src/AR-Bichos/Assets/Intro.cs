@@ -15,6 +15,11 @@ public class Intro : MonoBehaviour {
 		Data.Instance.playMode = Data.playModes.TIME;
 		Done();
 	}
+	public void PlayFree()
+	{
+		Data.Instance.playMode = Data.playModes.FREE;
+		Done();
+	}
 	public void Done()
 	{
 		SceneManager.LoadScene ("World");

@@ -15,7 +15,8 @@ public class Data : MonoBehaviour
 	public enum playModes
 	{
 		TIME,
-		PHOTOS
+		PHOTOS,
+		FREE
 	}
 
     public static Data Instance

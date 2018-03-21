@@ -11,6 +11,8 @@ public class UITimer : MonoBehaviour {
 	int photosTaken;
 
 	void Start () {
+		if (Data.Instance.playMode == Data.playModes.FREE)
+			SetFieldValue ("");
 		if (Data.Instance.playMode == Data.playModes.TIME)
 			LoopTimer ();
 		else
@@ -18,6 +20,10 @@ public class UITimer : MonoBehaviour {
 	}
 	public void NewPhotoTaken()
 	{
+		
+		if (Data.Instance.playMode != Data.playModes.PHOTOS)
+			return;
+		
 		photosTaken++;
 		if (photosTaken >= totalPhotos)
 			Finish ();

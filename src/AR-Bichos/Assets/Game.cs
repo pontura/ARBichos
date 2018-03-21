@@ -18,7 +18,7 @@ public class Game : MonoBehaviour {
 	}
 
 
-	void Start () {
+	void OnEnable () {
 		UIPanels.Instance.configScreens.SetState (ConfigScreens.states.DONE);
 		state = states.DONE;
 		animalsManager.Init ();

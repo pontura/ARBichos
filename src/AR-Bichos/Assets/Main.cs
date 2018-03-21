@@ -10,6 +10,7 @@ public class Main : MonoBehaviour {
 
 	public Game game;
 	public Game game_to_instantiate;
+	public Game gameIos;
 	public Camera debugCam;
 	public Camera cam_android;
 	public Camera cam_ios;
@@ -36,16 +37,17 @@ public class Main : MonoBehaviour {
 	{
 		#if UNITY_EDITOR
 			game = GameObject.Find("Game").GetComponent<Game>();
+		#elif UNITY_IOS
+			game = gameIos;
+			cam = cam_ios;
 		#endif
-		Events.AddWorld += AddWorld;
+			Events.AddWorld += AddWorld;
 	}
 	void AddWorld(Transform target, Vector3 pos, Quaternion rot)
 	{
 		Camera cam = cam_android;
 
-	#if UNITY_IOS
-		cam = cam_ios;
-	#endif
+	
 		game = Instantiate(game_to_instantiate, pos,rot);
 		game.Init ();
 

@@ -632,6 +632,7 @@ MonoBehaviour:
   AndroidController: {fileID: 1666105466}
   game: {fileID: 114123629932532646, guid: 2376e93116032d54ba2dd40f0f23eb1a, type: 2}
   game_to_instantiate: {fileID: 0}
+  gameIos: {fileID: 343584829}
   debugCam: {fileID: 11445738}
   cam_android: {fileID: 1690500126}
   cam_ios: {fileID: 165361075}
@@ -707,6 +708,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4502733656847676, guid: 2376e93116032d54ba2dd40f0f23eb1a,
     type: 2}
   m_PrefabInternal: {fileID: 343584827}
+--- !u!114 &343584829 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114123629932532646, guid: 2376e93116032d54ba2dd40f0f23eb1a,
+    type: 2}
+  m_PrefabInternal: {fileID: 343584827}
+  m_Script: {fileID: 11500000, guid: c2de01d55e0f27f44b043e8a3dba7b95, type: 3}
 --- !u!1 &344456257
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Game : MonoBehaviour {
 
 	public static Game mInstance;
@@ -17,8 +18,7 @@ public class Game : MonoBehaviour {
 		DONE
 	}
 
-
-	void OnEnable () {
+	public void Init() {
 		UIPanels.Instance.configScreens.SetState (ConfigScreens.states.DONE);
 		state = states.DONE;
 		animalsManager.Init ();

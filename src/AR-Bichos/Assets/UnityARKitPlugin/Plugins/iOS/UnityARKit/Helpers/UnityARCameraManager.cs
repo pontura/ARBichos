@@ -35,7 +35,16 @@ public class UnityARCameraManager : MonoBehaviour {
 			m_camera = Camera.main;
 		}
 	}
-
+	public void PlaneDetectionOFF()
+	{
+		planeDetection = UnityARPlaneDetection.None;
+		ARKitWorldTrackingSessionConfiguration config = new ARKitWorldTrackingSessionConfiguration();
+		config.planeDetection = planeDetection;
+		config.alignment = startAlignment;
+		config.getPointCloudData = false;
+		config.enableLightEstimation = false;
+		m_session.RunWithConfig (config);
+	}
 	public void SetCamera(Camera newCamera)
 	{
 		if (m_camera != null) {

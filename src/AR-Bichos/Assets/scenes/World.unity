@@ -654,7 +654,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1867672218}
+    m_TransformParent: {fileID: 1151132608}
     m_Modifications:
     - target: {fileID: 4502733656847676, guid: 2376e93116032d54ba2dd40f0f23eb1a, type: 2}
       propertyPath: m_LocalPosition.x
@@ -686,19 +686,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4502733656847676, guid: 2376e93116032d54ba2dd40f0f23eb1a, type: 2}
       propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4935570995877360, guid: 2376e93116032d54ba2dd40f0f23eb1a, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4935570995877360, guid: 2376e93116032d54ba2dd40f0f23eb1a, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4935570995877360, guid: 2376e93116032d54ba2dd40f0f23eb1a, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2376e93116032d54ba2dd40f0f23eb1a, type: 2}
@@ -1869,7 +1857,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1151132608
 Transform:
   m_ObjectHideFlags: 0
@@ -1883,6 +1871,7 @@ Transform:
   - {fileID: 1462455673}
   - {fileID: 1537093531}
   - {fileID: 1920977106}
+  - {fileID: 343584828}
   m_Father: {fileID: 1867672218}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1897,6 +1886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6941ec02ead994c9b848d640887441f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  iosCameraManager: {fileID: 216561630}
   m_HitTransform: {fileID: 1151132608}
   maxRayDistance: 30
   collisionLayer:
@@ -3075,7 +3065,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1462455673
 Transform:
   m_ObjectHideFlags: 0
@@ -3156,7 +3146,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1537093531
 Transform:
   m_ObjectHideFlags: 0
@@ -3650,7 +3640,6 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 1151132608}
-  - {fileID: 343584828}
   m_Father: {fileID: 1200473000}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3836,7 +3825,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1920977106
 Transform:
   m_ObjectHideFlags: 0
@@ -3861,6 +3850,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6941ec02ead994c9b848d640887441f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  iosCameraManager: {fileID: 0}
   m_HitTransform: {fileID: 1867672218}
   maxRayDistance: 30
   collisionLayer:

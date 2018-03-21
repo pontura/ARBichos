@@ -5,6 +5,7 @@ namespace UnityEngine.XR.iOS
 {
 	public class UnityARHitTestExample : MonoBehaviour
 	{
+		public UnityARCameraManager iosCameraManager;
 		public Transform m_HitTransform;
 		public float maxRayDistance = 30.0f;
 		public LayerMask collisionLayer = 1 << 10;  //ARKitPlane layer
@@ -14,6 +15,13 @@ namespace UnityEngine.XR.iOS
             List<ARHitTestResult> hitResults = UnityARSessionNativeInterface.GetARSessionNativeInterface ().HitTest (point, resultTypes);
             if (hitResults.Count > 0) {
                 foreach (var hitResult in hitResults) {
+					
+					//pontura:
+					iosCameraManager.PlaneDetectionOFF ();
+					Game game = m_HitTransform.gameObject.GetComponentInChildren<Game> ();
+					game.Init ();
+
+
                     Debug.Log ("Got hit!");
                     m_HitTransform.position = UnityARMatrixOps.GetPosition (hitResult.worldTransform);
                     m_HitTransform.rotation = UnityARMatrixOps.GetRotation (hitResult.worldTransform);

@@ -13,5 +13,9 @@ public class PhotosManager : MonoBehaviour {
 	{
 		return all [all.Count - 1];
 	}
+	public void Reset()
+	{
+		all.Clear ();
+	}
 
 }

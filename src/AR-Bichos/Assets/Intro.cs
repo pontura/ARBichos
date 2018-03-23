@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class Intro : MonoBehaviour {
 
+	void Start()
+	{
+		
+	}
 	public void PlayByPhotos()
 	{
 		Data.Instance.playMode = Data.playModes.PHOTOS;

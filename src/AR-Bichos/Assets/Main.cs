@@ -39,7 +39,6 @@ public class Main : MonoBehaviour {
 			game = GameObject.Find("Game").GetComponent<Game>();
 		#elif UNITY_IOS
 			game = gameIos;
-			cam = cam_ios;
 		#endif
 			Events.AddWorld += AddWorld;
 	}

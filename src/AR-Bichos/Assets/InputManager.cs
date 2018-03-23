@@ -6,8 +6,17 @@ public class InputManager : MonoBehaviour {
 
 	public AnimalsManager animalsManager;
 	public TakePhoto takePhoto;
+	Game game;
 
+	void Start()
+	{
+		game = GetComponent<Game> ();
+	}
 	void Update () {
+		
+		if (game.state == Game.states.WAITING)
+			return;
+		
 		if (Input.GetMouseButtonDown (0)) {
 			UIPanels.Instance.flash.SetOn ();
 			takePhoto.SetOn ();

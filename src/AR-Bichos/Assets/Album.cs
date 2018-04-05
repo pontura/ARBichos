@@ -13,13 +13,13 @@ public class Album : MonoBehaviour {
 		SetPhoto ();
 	}
 	public void Next() {
-		if (id <= Data.Instance.photosManager.all.Count - 1) {
+		if (id <= Data.Instance.photosManager.all.Count - 2) {
 			id++;
 			SetPhoto ();
 		}
 	}
 	public void Prev() {
-		if (id > 1) {
+		if (id > 0) {
 			id--;
 			SetPhoto ();
 		}

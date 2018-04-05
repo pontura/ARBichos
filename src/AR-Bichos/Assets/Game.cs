@@ -20,7 +20,10 @@ public class Game : MonoBehaviour {
 
 	public void Init() {
 		UIPanels.Instance.configScreens.SetState (ConfigScreens.states.DONE);
-		state = states.DONE;
 		animalsManager.Init ();
+		Invoke("Done", 0.5f);
+	}
+	void Done(){
+		state = states.DONE;
 	}
 }
